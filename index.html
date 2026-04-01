@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perplexity Clone</title>
+    <!-- Use Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <a href="#" class="nav-btn nav-btn-primary">
+                    <i class="ph ph-sparkle"></i> Search
+                </a>
+                <a href="#" class="nav-btn nav-sub-btn active">
+                    <i class="ph ph-laptop"></i> Computer
+                </a>
+
+                <div class="nav-divider"></div>
+
+                <a href="#" class="nav-item new-thread">
+                    <i class="ph ph-plus"></i> New thread
+                </a>
+
+                <nav class="main-nav">
+                    <a href="#" class="nav-item">
+                        <i class="ph ph-clock-counter-clockwise"></i> History
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="ph ph-files"></i> Discover
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="ph ph-squares-four"></i> Spaces
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="ph ph-trend-up"></i> Finance
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="ph ph-heart"></i> Health
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="ph ph-dots-three"></i> More
+                    </a>
+                </nav>
+            </div>
+
+            <div class="sidebar-bottom">
+                <div class="recent-threads">
+                    <h4>Recent</h4>
+                    <p>Recent and active threads will appear here.</p>
+                </div>
+
+                <div class="user-profile">
+                    <div class="profile-icon">
+                        <i class="ph ph-user"></i>
+                    </div>
+                    <span>Sign In</span>
+                    <i class="ph ph-caret-right ms-auto"></i>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main-content">
+            <div class="center-wrapper">
+                <div class="logo-container">
+                    <h1 class="main-logo">perplexity</h1>
+                </div>
+
+                <div class="search-container">
+                    <div class="search-box">
+                        <textarea class="search-input" placeholder="Type / for search modes" rows="1"></textarea>
+
+                        <div id="file-chip" class="file-chip hidden">
+                            <i class="ph ph-file-pdf"></i>
+                            <span id="file-name">filename.pdf</span>
+                            <button id="remove-file" class="remove-file-btn"><i class="ph ph-x"></i></button>
+                        </div>
+
+                        <div class="search-bar-bottom">
+                            <div class="left-actions">
+                                <input type="file" id="file-upload" accept=".pdf" style="display: none;">
+                                <button class="icon-btn" id="attach-btn" aria-label="Attach File">
+                                    <i class="ph ph-plus"></i>
+                                </button>
+                                <button class="chip-btn active-chip">
+                                    <i class="ph ph-laptop"></i> Computer <i class="ph ph-plus ms-1"></i>
+                                </button>
+                            </div>
+                            <div class="right-actions">
+                                <button class="dropdown-btn">
+                                    Model <i class="ph ph-caret-down"></i>
+                                </button>
+                                <button class="icon-btn" aria-label="Voice Input">
+                                    <i class="ph ph-microphone"></i>
+                                </button>
+                                <button class="submit-btn" aria-label="Submit">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 6V18M12 6V18M17 6V18" stroke="white" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="chat-messages" class="chat-messages">
+                    <!-- Messages will be appended here -->
+                </div>
+
+                <div id="loading-container" class="loading-container hidden">
+                    <p class="loading-text"><i class="ph ph-sparkle"></i> Thinking...</p>
+                    <div class="shimmer-line"></div>
+                    <div class="shimmer-line"></div>
+                    <div class="shimmer-line short"></div>
+                </div>
+
+                <div class="suggestions-container">
+                    <div class="suggestions-header">
+                        <i class="ph ph-laptop"></i> Try Computer
+                    </div>
+
+                    <div class="suggestion-chips">
+                        <button class="s-chip active-s-chip"><i class="ph ph-briefcase"></i> Build a business</button>
+                        <button class="s-chip"><i class="ph ph-list-dashes"></i> Organise my life</button>
+                        <button class="s-chip"><i class="ph ph-eye"></i> Monitor the situation</button>
+                        <button class="s-chip"><i class="ph ph-code"></i> Create a project</button>
+                    </div>
+
+                    <div class="suggestion-list">
+                        <a href="#" class="suggestion-item">Draft a partnership proposal for a target company</a>
+                        <a href="#" class="suggestion-item">Build a financial model for my startup</a>
+                        <a href="#" class="suggestion-item">Size the market for my business idea</a>
+                        <a href="#" class="suggestion-item">Research my top competitors and break down their
+                            strategy</a>
+                        <a href="#" class="suggestion-item">Find early customers and draft cold outreach</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Minimal JS to handle expanding the textarea -->
+    <script src="script.js"></script>
+</body>
+
+</html>
