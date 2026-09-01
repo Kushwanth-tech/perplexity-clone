@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 loadingContainer.classList.remove('hidden');
-                const response = await fetch('http://localhost:5000/api/upload', {
+                const response = await fetch('/api/upload', {
                     method: 'POST',
                     body: formData
                 });
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (removeFileBtn) {
         removeFileBtn.addEventListener('click', async () => {
             try {
-                await fetch('http://localhost:5000/api/clear', { method: 'POST' });
+                await fetch('/api/clear', { method: 'POST' });
                 isFileAttached = false;
                 currentFileName = "";
                 fileChip.classList.add('hidden');
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
             threads.unshift(threadData);
             if (threads.length > MAX_THREADS) {
                 const oldest = threads.pop();
-                fetch('http://localhost:5000/api/clear', { 
+                fetch('/api/clear', {', { 
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({ thread_id: oldest.id })
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
         threads = threads.filter(t => t.id !== id);
         saveThreads(threads);
         
-        fetch('http://localhost:5000/api/clear', { 
+        fetch('/api/clear', { 
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ thread_id: id })
@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.style.height = 'auto';
 
         try {
-            const response = await fetch('http://localhost:5000/api/chat', {
+            const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
